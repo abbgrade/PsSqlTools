@@ -1,0 +1,9 @@
+[submodule "PsSqlClient"]
+	path = PsSqlClient
+	url = https://github.com/abbgrade/PsSqlClient.git
+[submodule "PsSmo"]
+	path = PsSmo
+	url = https://github.com/abbgrade/PsSmo.git
+[submodule "PsDac"]
+	path = PsDac
+	url = https://github.com/abbgrade/PsDac.git
