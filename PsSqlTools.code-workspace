@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "PsDac"
+		},
+		{
+			"path": "PsSmo"
+		},
+		{
+			"path": "PsSqlClient"
+		}
+	],
+	"settings": {}
+}
