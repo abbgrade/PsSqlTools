@@ -4,14 +4,16 @@
 			"path": "."
 		},
 		{
-			"path": "PsDac"
+			"path": "PsSqlClient"
 		},
 		{
 			"path": "PsSmo"
 		},
 		{
-			"path": "PsSqlClient"
+			"path": "PsDac"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"powershell.cwd": "PsSqlTools"
+	}
 }
