@@ -1,3 +1,7 @@
+param (
+    $BuildNumber
+)
+
 $ModuleName = 'PsSqlTools'
 
 . $PSScriptRoot/tasks/Build.Tasks.ps1
