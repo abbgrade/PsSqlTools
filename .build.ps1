@@ -14,14 +14,24 @@ task InstallBuildDependencies -Jobs InstallModuleDependencies, {
 task InstallTestDependencies -Jobs InstallModuleDependencies, {}
 task InstallReleaseDependencies -Jobs InstallModuleDependencies, {}
 
-task BuildPsSqlClient -Before Import {
+task ImportPsSqlClient -Before Import {
     Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Import
 }
-task BuildPsSmo -Before Import {
+task ImportPsSmo -Before Import {
     Invoke-Build -File $PSScriptRoot/PsSmo/.build.ps1 -Task Import
 }
-task BuildPsDac -Before Import {
+task ImportPsDac -Before Import {
     Invoke-Build -File $PSScriptRoot/PsDac/.build.ps1 -Task Import
+}
+
+task BuildPsSqlClient -Before Build {
+    Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Build
+}
+task BuildPsSmo -Before Build {
+    Invoke-Build -File $PSScriptRoot/PsSmo/.build.ps1 -Task Build
+}
+task BuildPsDac -Before Build {
+    Invoke-Build -File $PSScriptRoot/PsDac/.build.ps1 -Task Build
 }
 
 task Doc.Update {}
