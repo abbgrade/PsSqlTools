@@ -1,5 +1,6 @@
 param (
-    $BuildNumber
+    $BuildNumber,
+    $NuGetApiKey
 )
 
 $ModuleName = 'PsSqlTools'
@@ -28,15 +29,15 @@ task ImportPsDac -Before Import {
     Invoke-Build -File $PSScriptRoot/PsDac/.build.ps1 -Task Import
 }
 
-task BuildPsSqlClient -Before Build {
-    Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Build
-}
-task BuildPsSmo -Before Build {
-    Invoke-Build -File $PSScriptRoot/PsSmo/.build.ps1 -Task Build
-}
-task BuildPsDac -Before Build {
-    Invoke-Build -File $PSScriptRoot/PsDac/.build.ps1 -Task Build
-}
+# task BuildPsSqlClient -Before Build {
+#     Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Build
+# }
+# task BuildPsSmo -Before Build {
+#     Invoke-Build -File $PSScriptRoot/PsSmo/.build.ps1 -Task Build
+# }
+# task BuildPsDac -Before Build {
+#     Invoke-Build -File $PSScriptRoot/PsDac/.build.ps1 -Task Build
+# }
 
 task Doc.Update {}
 
