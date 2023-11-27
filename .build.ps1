@@ -7,16 +7,16 @@ $ModuleName = 'PsSqlTools'
 . $PSScriptRoot/tasks/Build.Tasks.ps1
 . $PSScriptRoot/tasks/PsBuild.Tasks.ps1
 
-task InstallModuleDependencies -Jobs {}
-task InstallBuildDependencies -Jobs InstallModuleDependencies, {
-    Install-Module platyPs
-}
-task InstallTestDependencies -Jobs InstallModuleDependencies, {}
-task InstallReleaseDependencies -Jobs InstallModuleDependencies, {
+task InstallModuleDependencies -Jobs {
     Install-Module PsSqlClient -AllowPrerelease:( $BuildNumber )
     Install-Module PsSmo -AllowPrerelease:( $BuildNumber )
     Install-Module PsDac -AllowPrerelease:( $BuildNumber )
 }
+task InstallBuildDependencies -Jobs InstallModuleDependencies, {
+    Install-Module platyPs
+}
+task InstallTestDependencies -Jobs InstallModuleDependencies, {}
+task InstallReleaseDependencies -Jobs InstallModuleDependencies, {}
 
 task ImportPsSqlClient -Before Import {
     Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Import
