@@ -12,7 +12,11 @@ task InstallBuildDependencies -Jobs InstallModuleDependencies, {
     Install-Module platyPs
 }
 task InstallTestDependencies -Jobs InstallModuleDependencies, {}
-task InstallReleaseDependencies -Jobs InstallModuleDependencies, {}
+task InstallReleaseDependencies -Jobs InstallModuleDependencies, {
+    Install-Module PsSqlClient -AllowPrerelease:( $BuildNumber )
+    Install-Module PsSmo -AllowPrerelease:( $BuildNumber )
+    Install-Module PsDac -AllowPrerelease:( $BuildNumber )
+}
 
 task ImportPsSqlClient -Before Import {
     Invoke-Build -File $PSScriptRoot/PsSqlClient/.build.ps1 -Task Import
@@ -36,8 +40,10 @@ task BuildPsDac -Before Build {
 
 task Doc.Update {}
 
-task PrepareSetPrerelease -Before SetPrerelease {
-    $Env:PSModulePath += ":$PSScriptRoot/PsSqlClient/publish"
-    $Env:PSModulePath += ":$PSScriptRoot/PsSmo/publish"
-    $Env:PSModulePath += ":$PSScriptRoot/PsDac/publish"
-}
+# task PrepareSetPrerelease -Before SetPrerelease {
+#     $Env:PSModulePath += ":$PSScriptRoot/PsSqlClient/publish"
+#     $Env:PSModulePath += ":$PSScriptRoot/PsSmo/publish"
+#     $Env:PSModulePath += ":$PSScriptRoot/PsDac/publish"
+
+#     Write-Verbose $Env:PSModulePath
+# }
