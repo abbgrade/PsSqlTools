@@ -10,7 +10,7 @@ $ModuleName = 'PsSqlTools'
 task InstallModuleDependencies -Jobs {
     Install-Module PsSqlClient -AllowPrerelease:( $BuildNumber ) -AllowClobber
     Install-Module PsSmo -AllowPrerelease:( $BuildNumber )
-    Install-Module PsDac -AllowPrerelease:( $BuildNumber )
+    Install-Module PsDac -AllowPrerelease:( $BuildNumber ) -AllowClobber
 }
 task InstallBuildDependencies -Jobs InstallModuleDependencies, {
     Install-Module platyPs
