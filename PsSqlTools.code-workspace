@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "PsSqlClient"
+		},
+		{
+			"path": "PsSmo"
+		},
+		{
+			"path": "PsDac"
+		}
+	],
+	"settings": {
+		"powershell.cwd": "PsSqlTools"
+	}
+}
