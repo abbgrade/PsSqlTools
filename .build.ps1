@@ -26,7 +26,7 @@ task BuildPsDac -Before Import {
 
 task Doc.Update {}
 
-task PreparePublish -Before Publish {
+task PrepareBuild -Before Build {
     $Env:PSModulePath += ":$PSScriptRoot/PsSqlClient/publish"
     $Env:PSModulePath += ":$PSScriptRoot/PsSmo/publish"
     $Env:PSModulePath += ":$PSScriptRoot/PsDac/publish"
