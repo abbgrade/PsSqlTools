@@ -12,7 +12,7 @@
 # RootModule = 'PsSqlTools.psm1'
 
 # Version number of this module.
-ModuleVersion = '0.1.0'
+ModuleVersion = '0.01'
 
 # Supported PSEditions
 # CompatiblePSEditions = @()
@@ -52,9 +52,9 @@ PowerShellVersion = '7.2.16'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @(
-    @{ ModuleName = 'PsSqlClient'; ModuleVersion = '2.2.0' },
-    @{ ModuleName = 'PsSmo'; ModuleVersion = '1.3.0' },
-    @{ ModuleName = 'PsDac'; ModuleVersion = '1.7.0' }
+    @{ ModuleName = 'PsSqlClient'; ModuleVersion = '2.1.0' },
+    @{ ModuleName = 'PsSmo'; ModuleVersion = '1.2.0' },
+    @{ ModuleName = 'PsDac'; ModuleVersion = '1.6.0' }
 )
 
 # Assemblies that must be loaded prior to importing this module
