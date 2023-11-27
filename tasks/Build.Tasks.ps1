@@ -70,7 +70,7 @@ task Install -Jobs Build, {
 }
 
 # Synopsis: Publish the module to PSGallery.
-task Publish -Jobs Clean, Build, {
+task Publish -Jobs Clean, Build, Import, {
 	if ( -Not $Global:PreRelease ) {
 		assert ( $Configuration -eq 'Release' )
 		Update-ModuleManifest -Path $Global:Manifest -Prerelease ''
