@@ -10,8 +10,8 @@ PsSqlTools is a PowerShell container module that aims to provide specialized and
 
 ## Components and Versions
 
-| Module | Version |
-|-|-|
-| PsSqlClient | 2.1.1 |
-| PsSmo | 1.2.1 |
-| PsDac | 1.6.0 |
+| Module      | Version | Microsoft.Identity.Client | Microsoft.Data.SqlClient | Microsoft.SqlServer.Smo | Microsoft.SqlServer.Dac |
+| ----------- | ------- | ------------------------- | ------------------------ | ----------------------- | ----------------------- |
+| PsSqlClient | 2.2.0   | 4.47.2.0                  | 5.1.1                    |                         |                         |
+| PsSmo       | 1.3.0   | 4.47.2.0                  | 5.1.1                    | 17.100.18               |                         |
+| PsDac       | 1.7.0   | 4.48.1.0                  | 5.1.1                    |                         | 162.1.167               |
