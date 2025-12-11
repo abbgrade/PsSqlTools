@@ -9,3 +9,12 @@ task Test.PsSmo Test.ImportPsSqlClient, {
     Invoke-Pester
 }
 
+task Test.PsDac {
+    Join-Path $PSScriptRoot .. PsDac test | Push-Location
+    Invoke-Pester
+}
+
+task Test.PsDac.ex.Azure {
+    Join-Path $PSScriptRoot .. PsDac test | Push-Location
+    Invoke-Pester -Configuration @{ Filter = @{ ExcludeTag = 'AzureSql' }}
+}
