@@ -1,10 +1,10 @@
 
-task Test.ImportPsSqlClient {
+task Test.Import.PsSqlClient {
     Join-Path $PSScriptRoot .. .\PsSqlClient | Push-Location
     Invoke-Build Import
 }
 
-task Test.PsSmo Test.ImportPsSqlClient, {
+task Test.PsSmo Test.Import.PsSqlClient, {
     Join-Path $PSScriptRoot .. PsSmo test | Push-Location
     Invoke-Pester
 }
