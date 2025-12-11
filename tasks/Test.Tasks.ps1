@@ -34,4 +34,14 @@ task Test.PsDac.ex.Azure -Jobs Test.Import.PsSqlClient, Test.Import.PsSmo, Test.
     Invoke-Pester -Configuration @{ Filter = @{ ExcludeTag = 'AzureSql' }}
 }
 
+task Test.PsSqlClient -Jobs Test.Import.PsSqlClient, {
+    Join-Path $PSScriptRoot .. PsSqlClient test | Push-Location
+    Invoke-Pester
+}
+
+task Test.PsSqlClient.ex.Azure -Jobs Test.Import.PsSqlClient, {
+    Join-Path $PSScriptRoot .. PsSqlClient test | Push-Location
+    Invoke-Pester -Configuration @{ Filter = @{ ExcludeTag = 'AzureSql' }}
+}
+
 #endregion
