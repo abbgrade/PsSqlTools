@@ -33,7 +33,7 @@ Copyright = '(c) Steffen Kampmann. All rights reserved.'
 Description = 'PsSqlTools is a PowerShell container module that aims to provide specialized and compatible modules that support the professional development of Microsoft SQL solutions in Azure and on-prem.'
 
 # Minimum version of the PowerShell engine required by this module
-PowerShellVersion = '7.2.16'
+PowerShellVersion = '7.4'
 
 # Name of the PowerShell host required by this module
 # PowerShellHostName = ''
@@ -52,9 +52,9 @@ PowerShellVersion = '7.2.16'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @(
-    @{ ModuleName = 'PsSqlClient'; ModuleVersion = '2.2.0' },
-    @{ ModuleName = 'PsSmo'; ModuleVersion = '1.3.0' },
-    @{ ModuleName = 'PsDac'; ModuleVersion = '1.7.0' }
+    @{ ModuleName = 'PsSqlClient'; ModuleVersion = '2.3.0' },
+    @{ ModuleName = 'PsSmo'; ModuleVersion = '1.4.0' },
+    @{ ModuleName = 'PsDac'; ModuleVersion = '1.8.0' }
 )
 
 # Assemblies that must be loaded prior to importing this module
