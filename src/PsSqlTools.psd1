@@ -52,9 +52,9 @@ PowerShellVersion = '7.4'
 
 # Modules that must be imported into the global environment prior to importing this module
 RequiredModules = @(
-    @{ ModuleName = 'PsSqlClient'; ModuleVersion = '2.3.0' },
-    @{ ModuleName = 'PsSmo'; ModuleVersion = '1.4.0' },
-    @{ ModuleName = 'PsDac'; ModuleVersion = '1.8.0' }
+    @{ ModuleName = 'PsSqlClient'; RequiredVersion = '2.3.0' },
+    @{ ModuleName = 'PsSmo'; RequiredVersion = '1.4.0' },
+    @{ ModuleName = 'PsDac'; RequiredVersion = '1.8.0' }
 )
 
 # Assemblies that must be loaded prior to importing this module
