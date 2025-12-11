@@ -7,6 +7,7 @@ $ModuleName = 'PsSqlTools'
 
 . $PSScriptRoot/tasks/Build.Tasks.ps1
 . $PSScriptRoot/tasks/PsBuild.Tasks.ps1
+. $PSScriptRoot/tasks/Test.Tasks.ps1
 
 task InstallModuleDependencies -Jobs {
     Install-Module PsSqlClient -AllowPrerelease:( $BuildNumber ) -AllowClobber
