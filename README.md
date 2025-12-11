@@ -1,6 +1,6 @@
-# PsSqlTools
+# PsSqlUtils
 
-PsSqlTools is a PowerShell container module that aims to provide specialized and compatible modules that support the professional development of Microsoft SQL solutions in Azure and on-prem.
+PsSqlUtils is a PowerShell container module that aims to provide specialized and compatible modules that support the professional development of Microsoft SQL solutions in Azure and on-prem.
 
 ## The modules and their purpose
 
@@ -44,7 +44,7 @@ PsSqlClient uses Microsoft.Data.SqlClient and introduces a dependency to Azure.I
 
 ### Azure PowerShell Long Term Support
 
-PsSqlTools is often used with the Azure PowerShell module, especially the Az.Accounts module, which depends on Azure.Identity.
+PsSqlUtils is often used with the Azure PowerShell module, especially the Az.Accounts module, which depends on Azure.Identity.
 
 | Major Version | Latest Minor | Support End | Az.Accounts | Azure.Identity | Microsoft.Identity.Client |
 | ------------- | ------------ | ----------- | ----------- | -------------- | ------------------------- |

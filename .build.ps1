@@ -3,7 +3,7 @@ param (
     $NuGetApiKey
 )
 
-$ModuleName = 'PsSqlTools'
+$ModuleName = 'PsSqlUtils'
 
 . $PSScriptRoot/tasks/Build.Tasks.ps1
 . $PSScriptRoot/tasks/PsBuild.Tasks.ps1
