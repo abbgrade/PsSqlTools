@@ -10,6 +10,8 @@ PsSqlTools is a PowerShell container module that aims to provide specialized and
 
 ## Components, Versions and Compatibility
 
+Since this module uses some DotNet libraries and PowerShell is not totally robust against assembly version conflicts, this module uses dependencies with aligned versions.
+
 | Module      | Version | Azure.Identity | Microsoft.Data.SqlClient | Microsoft.SqlServer.Smo | Microsoft.SqlServer.Dac |
 | ----------- | ------- | -------------- | ------------------------ | ----------------------- | ----------------------- |
 | PsSqlClient | 2.3.0   | 1.13.0         | 5.2.3                    |                         |                         |
@@ -18,11 +20,15 @@ PsSqlTools is a PowerShell container module that aims to provide specialized and
 
 ### Microsoft.SqlServer.Smo
 
+PsSmo uses Microsoft.SqlServer.Smo and introduces a dependency to Microsoft.Data.SqlClient.
+
 | Version  | Microsoft.Data.SqlClient |
 | -------- | ------------------------ |
 | 170.2.70 | >= 5.1.6                 |
 
 ### Microsoft.SqlServer.Dac
+
+PsDac uses Microsoft.SqlServer.Dac and introduces a dependency to Microsoft.Data.SqlClient.
 
 | Version  | Microsoft.Data.SqlClient |
 | -------- | ------------------------ |
@@ -30,11 +36,15 @@ PsSqlTools is a PowerShell container module that aims to provide specialized and
 
 ### Microsoft.Data.SqlClient
 
+PsSqlClient uses Microsoft.Data.SqlClient and introduces a dependency to Azure.Identity.
+
 | Version  | Azure.Identity |
 | -------- | -------------- |
 | 5.2.3    | >= 1.11.4      |
 
 ### Azure PowerShell Long Term Support
+
+PsSqlTools is often used with the Azure PowerShell module, especially the Az.Accounts module, which depends on Azure.Identity.
 
 | Major Version | Latest Minor | Support End | Az.Accounts | Azure.Identity | Microsoft.Identity.Client |
 | ------------- | ------------ | ----------- | ----------- | -------------- | ------------------------- |
@@ -43,6 +53,8 @@ PsSqlTools is a PowerShell container module that aims to provide specialized and
 | 16            |              |             |             |                |                           |
 
 ### Azure.Identity
+
+Microsoft.Data.SqlClient and Az.Accounts use Azure.Identity which depends on Microsoft.Identity.Client.
 
 | Version | Microsoft.Identity.Client |
 | ------- | ------------------------- |
