@@ -7,3 +7,6 @@
 [submodule "PsDac"]
 	path = PsDac
 	url = https://github.com/abbgrade/PsDac.git
+[submodule "PsSqlTestServer"]
+	path = PsSqlTestServer
+	url = https://github.com/abbgrade/PsSqlTestServer.git
