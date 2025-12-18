@@ -11,9 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Updated PsSqlClient to 2.3.0.
-- Updated PsSmo to 1.4.0.
-- Updated PsDac to 1.8.0.
+- Updated PsSqlClient to 2.3.1.
+- Updated PsSmo to 1.4.1.
+- Updated PsDac to 1.8.1.
 - Updated System.Management.Automation and PowerShellVersion to 7.4.
 - Updated TargetFramework to net8.0.
 - Updated Microsoft.SqlServer.SqlManagementObjects to 180.10.0.

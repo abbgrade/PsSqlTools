@@ -13,11 +13,11 @@ PsSqlUtils is a PowerShell container module that aims to provide specialized and
 
 Since this module uses some DotNet libraries and PowerShell is not totally robust against assembly version conflicts, this module uses dependencies with aligned versions.
 
-| Module      | Version | Azure.Identity | Microsoft.Data.SqlClient | Microsoft.SqlServer.Smo | Microsoft.SqlServer.Dac |
-| ----------- | ------- | -------------- | ------------------------ | ----------------------- | ----------------------- |
-| PsSqlClient | 2.3.0   | 1.13.0         | 5.2.3                    |                         |                         |
-| PsSmo       | 1.4.0   | 1.13.0         | 5.2.3                    | 180.10.0                |                         |
-| PsDac       | 1.8.0   | 1.13.0         | 5.2.3                    |                         | 170.2.70                |
+| Module      | Version | Azure.Identity | Azure.Core | Microsoft.Data.SqlClient | Microsoft.SqlServer.Smo | Microsoft.SqlServer.Dac |
+| ----------- | ------- | -------------- | ---------- | ------------------------ | ----------------------- | ----------------------- |
+| PsSqlClient | 2.3.1   | 1.13.0         | 1.45.0     | 5.2.3                    |                         |                         |
+| PsSmo       | 1.4.1   | 1.13.0         | 1.45.0     | 5.2.3                    | 180.10.0                |                         |
+| PsDac       | 1.8.1   | 1.13.0         | 1.45.0     | 5.2.3                    |                         | 170.2.70                |
 
 ### Microsoft.SqlServer.Smo
 
@@ -45,19 +45,19 @@ PsSqlClient uses Microsoft.Data.SqlClient and introduces a dependency to Azure.I
 
 ### Azure PowerShell Long Term Support
 
-PsSqlUtils is often used with the Azure PowerShell module, especially the Az.Accounts module, which depends on Azure.Identity.
+PsSqlUtils is often used with the Azure PowerShell module, especially the Az.Accounts module, which depends on Azure.Identity and Azure.Core.
 
-| Major Version | Latest Minor | Support End | Az.Accounts | Azure.Identity | Microsoft.Identity.Client |
-| ------------- | ------------ | ----------- | ----------- | -------------- | ------------------------- |
-| 12            | 5.0          | 2025        | >= 3.0.5    | 1.13.0         | 4.65.0                    |
-| 14            | 5.0          | 2026        | >= 5.3.0    | 1.13.0         | 4.65.0                    |
-| 16            |              |             |             |                |                           |
+| Major Version | Latest Minor | Support End | Az.Accounts | Azure.Identity | Microsoft.Identity.Client | Azure.Core |
+| ------------- | ------------ | ----------- | ----------- | -------------- | ------------------------- | ---------- |
+| 12            | 5.0          | 2025        | >= 3.0.5    | 1.13.0         | 4.65.0                    | 1.41.0     |
+| 14            | 5.0          | 2026        | >= 5.3.0    | 1.13.0         | 4.65.0                    | 1.45.0     |
+| 16            |              |             |             |                |                           |            |
 
 ### Azure.Identity
 
-Microsoft.Data.SqlClient and Az.Accounts use Azure.Identity which depends on Microsoft.Identity.Client.
+Microsoft.Data.SqlClient and Az.Accounts use Azure.Identity which depends on Microsoft.Identity.Client and Azure.Core.
 
-| Version | Microsoft.Identity.Client |
-| ------- | ------------------------- |
-| 1.11.4  | 4.61.3                    |
-| 1.13.0  | 4.65.0                    |
+| Version | Microsoft.Identity.Client | Azure.Core |
+| ------- | ------------------------- | ---------- |
+| 1.11.4  | >= 4.61.3                 | >= 1.38.0  |
+| 1.13.0  | >= 4.65.0                 | >= 1.44.1  |
